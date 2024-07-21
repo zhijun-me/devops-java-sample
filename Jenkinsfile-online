@@ -9,14 +9,15 @@ pipeline {
         string(name:'TAG_NAME',defaultValue: '',description:'')
     }
 
-    environment {
-        DOCKER_CREDENTIAL_ID = 'dockerhub-id'
-        GITHUB_CREDENTIAL_ID = 'github-id'
-        KUBECONFIG_CREDENTIAL_ID = 'demo-kubeconfig'
+   environment {
+        DOCKER_CREDENTIAL_ID = 'docker-hub' //devops项目中配置的dockerHub的凭证id
+        GITHUB_CREDENTIAL_ID = 'github'
+        KUBECONFIG_CREDENTIAL_ID = 'kubeconfig-id'
         REGISTRY = 'docker.io'
-        DOCKERHUB_NAMESPACE = 'docker_username'
-        GITHUB_ACCOUNT = 'kubesphere'
+        DOCKERHUB_NAMESPACE = 'kongzhongzj' // docker hub 的用户名
+        GITHUB_ACCOUNT = 'zhijun-me' //github的用户名
         APP_NAME = 'devops-java-sample'
+        SONAR_CREDENTIAL_ID = 'sonar-qube' //sonar 的凭证id  ，这个项目似乎删掉了 sonar ？
     }
 
     stages {
